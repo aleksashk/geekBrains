@@ -53,14 +53,56 @@ public class Task1MainApp {
     }
 
     private static boolean checkWin(char symb) {
-        if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb) return true;
-        if (map[1][0] == symb && map[1][1] == symb && map[1][2] == symb) return true;
-        if (map[2][0] == symb && map[2][1] == symb && map[2][2] == symb) return true;
-        if (map[0][0] == symb && map[1][0] == symb && map[2][0] == symb) return true;
-        if (map[0][1] == symb && map[1][1] == symb && map[2][1] == symb) return true;
-        if (map[0][2] == symb && map[1][2] == symb && map[2][2] == symb) return true;
-        if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) return true;
-        if (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) return true;
+        return isMainDiag(symb) || isSecondDiag(symb) || isGorizont(symb) || isVertical(symb);
+    }
+
+    public static boolean isMainDiag(char symb) {
+        for (int i = 0; i < SIZE; i++) {
+            if (map[i][i] != symb) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isSecondDiag(char symb) {
+        for (int i = 0; i < SIZE; i++) {
+            if (map[i][SIZE - 1 - i] != symb) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isGorizont(char symb) {
+        boolean flag = true;
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (map[i][j] != symb) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isVertical(char symb) {
+        boolean flag = true;
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (map[j][i] != symb) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                return true;
+            }
+        }
         return false;
     }
 
