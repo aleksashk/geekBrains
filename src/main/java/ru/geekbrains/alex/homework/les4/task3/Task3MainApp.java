@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Task3MainApp {
     public static char[][] map;
-    public static final int SIZE = 5;
+    public static final int SIZE = 9;
 
     public static final int DOTS_TO_WIN = 4;
     public static final char DOT_EMPTY = '.';
@@ -61,13 +61,9 @@ public class Task3MainApp {
     }
 
     public static boolean isMainDiag(char symb) {
-        int i = 0;
         int counter = 0;
-        while (map[i][i] != symb && i < SIZE - 1) {
-            i++;
-        }
-        for (int j = i; j < SIZE; j++) {
-            if (map[j][j] == symb) {
+        for (int i = 0; i < SIZE; i++) {
+            if (map[i][i] == symb) {
                 counter++;
                 if (counter == DOTS_TO_WIN) {
                     return true;
@@ -80,13 +76,9 @@ public class Task3MainApp {
     }
 
     public static boolean isSecondDiag(char symb) {
-        int i = 0;
         int counter = 0;
-        while (map[i][SIZE - 1 - i] != symb && i < SIZE - 1) {
-            i++;
-        }
-        for (int j = i; j < SIZE; j++) {
-            if (map[j][SIZE - 1 - j] == symb) {
+        for (int i = 0; i < SIZE; i++) {
+            if (map[i][SIZE - 1 - i] == symb) {
                 counter++;
                 if (counter == DOTS_TO_WIN) {
                     return true;
@@ -102,12 +94,8 @@ public class Task3MainApp {
 
         for (int i = 0; i < SIZE; i++) {
             int counter = 0;
-            int j = 0;
-            while (map[i][j] != symb && j < SIZE - 1) {
-                j++;
-            }
-            for (int k = j; k < SIZE; k++) {
-                if (map[i][k] == symb) {
+            for (int j = 0; j < SIZE; j++) {
+                if (map[i][j] == symb) {
                     counter++;
                     if (counter == DOTS_TO_WIN) {
                         return true;
@@ -123,12 +111,8 @@ public class Task3MainApp {
     public static boolean isVertical(char symb) {
         for (int j = 0; j < SIZE; j++) {
             int counter = 0;
-            int i = 0;
-            while (map[i][j] != symb && i < SIZE - 1) {
-                i++;
-            }
-            for (int k = i; k < SIZE; k++) {
-                if (map[k][j] == symb) {
+            for (int i = 0; i < SIZE; i++) {
+                if (map[i][j] == symb) {
                     counter++;
                     if (counter == DOTS_TO_WIN) {
                         return true;
