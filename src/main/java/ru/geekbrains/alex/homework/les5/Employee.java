@@ -1,4 +1,4 @@
-package ru.geekbrains.dz5;
+package ru.geekbrains.alex.homework.les5;
 
 public class Employee {
     private String fullName;

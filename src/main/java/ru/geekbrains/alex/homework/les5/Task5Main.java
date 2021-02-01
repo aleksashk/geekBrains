@@ -1,6 +1,4 @@
-package ru.geekbrains.dz5;
-
-import ru.geekbrains.dz5.Employee;
+package ru.geekbrains.alex.homework.les5;
 
 public class Task5Main {
     public static void main(String[] args) {
