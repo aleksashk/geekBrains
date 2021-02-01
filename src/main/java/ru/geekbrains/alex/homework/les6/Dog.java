@@ -7,8 +7,8 @@ public class Dog extends Animal {
     private String msg;
 
     public Dog(String name) {
+        super(name);
         countOfDog++;
-        this.name = name;
     }
 
     @Override

@@ -46,7 +46,8 @@ public class MainApp {
         action();
 
         String msg = "Всего котов создано: " + Cat.countOfCat + "шт." +
-                "\nВсего собак создано: " + Dog.countOfDog + "шт.";
+                "\nВсего собак создано: " + Dog.countOfDog + "шт." +
+                "\nВсего животных создано: " + Animal.counterOfAnimal + "шт.";
         Printer.print(msg);
 
     }

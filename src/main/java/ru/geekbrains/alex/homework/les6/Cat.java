@@ -6,8 +6,8 @@ public class Cat extends Animal {
     private String msg;
 
     public Cat(String name) {
+        super(name);
         countOfCat++;
-        this.name = name;
     }
 
     @Override
@@ -15,7 +15,8 @@ public class Cat extends Animal {
         if (distance <= MAXRUNDISTANCE) {
             msg = "Котейка по кличке \"" + name + "\" пробежал " + distance + "м.";
         } else {
-            msg = "Котейке нужно пробежать " + distance + "м. Mission impossible. Котейка по кличке \"" + name +
+            msg = "Котейке нужно пробежать " + distance +
+                    "м. Mission impossible. Котейка по кличке \"" + name +
                     "\" не может пробежать больше " + MAXRUNDISTANCE + "м.";
         }
         Printer.print(msg);
@@ -23,7 +24,9 @@ public class Cat extends Animal {
 
     @Override
     public void swim(int distance) {
-            msg = "Котейке нужно проплыть " + distance + "м. Fatal error!!! Котейка по кличке \"" + name + "\" не умеет плавать.";
+        msg = "Котейке нужно проплыть " + distance +
+                "м. Fatal error!!! Котейка по кличке \"" +
+                name + "\" не умеет плавать.";
         Printer.print(msg);
     }
 }
