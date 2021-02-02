@@ -7,8 +7,14 @@ public class Plate {
         this.food = food;
     }
 
+    public int getFood() {
+        return food;
+    }
+
     public void increaseFood(int n) {
+        System.out.println("добавляем " + n + " еды в тарелку");
         food += n;
+        System.out.println("теперь в тарелке осталось " + n + " еды");
     }
 
     public boolean decreaseFood(int n) {
@@ -16,11 +22,10 @@ public class Plate {
             food -= n;
             return true;
         }
-        System.out.println("Кот не может съесть еды больше, чем находится в тарелке. Кот остался голодным");
         return false;
     }
 
     public void info() {
-        System.out.println("plate: " + food);
+        System.out.println("еды в тарелке осталось: " + food);
     }
 }

@@ -1,8 +1,8 @@
 package ru.geekbrains.alex.homework.les7;
 
 public class Cat {
-    private String name;
-    private int appetite;
+    private final String name;
+    private final int appetite;
     private boolean satiety;
 
     public Cat(String name, int appetite) {
@@ -21,9 +21,14 @@ public class Cat {
 
     public void eat(Plate p) {
         if (p.decreaseFood(appetite) && !satiety) {
-            satiety = true;
+            if(appetite > p.getFood()){
+                System.out.println("Кот " + name + " не может съесть еды больше, чем находится в тарелке. " +
+                        "\nКот " + name + " остался голодным");
+            }else {
+                satiety = true;
+            }
         } else {
-            System.out.println("Кот сыт и есть не будет");
+            System.out.println("Кот " + name +  " сcыт и есть не будет");
         }
     }
 }
