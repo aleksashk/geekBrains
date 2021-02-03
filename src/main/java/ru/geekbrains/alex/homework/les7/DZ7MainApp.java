@@ -8,7 +8,7 @@ public class DZ7MainApp {
 
         for (Cat cat : cats) {
             cat.eat(plate);
-            System.out.println("Кот " + cat.getName() + " сcыт - " + cat.isSatiety());
+            System.out.println("Кот " + cat.getName() + " сыт - " + cat.isSatiety());
         }
 
         plate.info();
@@ -17,7 +17,7 @@ public class DZ7MainApp {
 
         for (Cat cat : cats) {
             cat.eat(plate);
-            System.out.println("Кот " + cat.getName() + " сcыт - " + cat.isSatiety());
+            System.out.println("Кот " + cat.getName() + " сыт - " + cat.isSatiety());
         }
 
         plate.info();

@@ -28,7 +28,7 @@ public class Cat {
                 satiety = true;
             }
         } else {
-            System.out.println("Кот " + name +  " сcыт и есть не будет");
+            System.out.println("Кот " + name +  " сыт и есть не будет");
         }
     }
 }
