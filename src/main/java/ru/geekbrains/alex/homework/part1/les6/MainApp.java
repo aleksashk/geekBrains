@@ -1,4 +1,4 @@
-package ru.geekbrains.alex.homework.les6;
+package ru.geekbrains.alex.homework.part1.les6;
 
 import java.util.ArrayList;
 import java.util.List;

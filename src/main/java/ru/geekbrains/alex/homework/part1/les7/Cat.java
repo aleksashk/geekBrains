@@ -1,4 +1,4 @@
-package ru.geekbrains.alex.homework.les7;
+package ru.geekbrains.alex.homework.part1.les7;
 
 public class Cat {
     private final String name;

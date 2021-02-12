@@ -1,4 +1,5 @@
-package ru.geekbrains.alex.homework.les7;
+package ru.geekbrains.alex.homework.part1.les7;
+
 
 public class DZ7MainApp {
     public static void main(String[] args) {

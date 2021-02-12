@@ -1,4 +1,4 @@
-package ru.geekbrains.alex.homework.les6;
+package ru.geekbrains.alex.homework.part1.les6;
 
 public class Cat extends Animal {
     private static final int MAXRUNDISTANCE = 200;

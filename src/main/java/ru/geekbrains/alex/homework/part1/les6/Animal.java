@@ -1,4 +1,4 @@
-package ru.geekbrains.alex.homework.les6;
+package ru.geekbrains.alex.homework.part1.les6;
 
 public abstract class Animal implements Runnable, Swimmable {
     static int counterOfAnimal = 0;

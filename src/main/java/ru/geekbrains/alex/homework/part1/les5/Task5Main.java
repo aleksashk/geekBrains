@@ -1,4 +1,4 @@
-package ru.geekbrains.alex.homework.les5;
+package ru.geekbrains.alex.homework.part1.les5;
 
 public class Task5Main {
     public static void main(String[] args) {
