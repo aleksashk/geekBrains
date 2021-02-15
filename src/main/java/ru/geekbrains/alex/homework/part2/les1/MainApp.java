@@ -1,33 +1,44 @@
 package ru.geekbrains.alex.homework.part2.les1;
 
 public class MainApp {
-    public static void main(String[] args){
-        ObstacleCourse course1 = new ObstacleCourse(new Distance(1000), new Wall(2));
-        ObstacleCourse course2 = new ObstacleCourse(new Distance(200), new Wall(1));
-        ObstacleCourse course3 = new ObstacleCourse(new Distance(10000), new Wall(4));
-        ObstacleCourse course4 = new ObstacleCourse(new Distance(100000), new Wall(8));
+    public static void main(String[] args) {
+        ICourse[] members1 = {
+                new Cat("Laska", 5, 10000),
+                new Person("Ivanka", 6, 50000),
+                new Robot("3PR-16", 8, 13000),
+                new Cat("John", 10, 7000)
+        };
 
-        ObstacleCourse[] courses = new ObstacleCourse[4];
-        courses[0] = course1;
-        courses[1] = course2;
-        courses[2] = course3;
-        courses[3] = course4;
+        ICourse[] members2 = {
+                new Cat("Bob", 1, 100),
+                new Person("Flora", 1, 500),
+                new Robot("745-UBSD-FR07", 2, 300),
+                new Cat("BorIs", 1, 240)
+        };
 
-        IAction[] actions = new IAction[3];
-        actions[0] = new Cat("Vasily");
-        actions[1] = new People("Kate");
-        actions[2] = new Robot("3PR-14");
+        Team team1 = new Team("faster", members1);
+        Team team2 = new Team("looser", members2);
 
-        for (int i = 0; i < actions.length; i++) {
-            for (int j = 0; j < courses.length; j++) {
-                try {
-                    actions[i].run(courses[j]);
-                    actions[i].jump(courses[j]);
-                } catch (TooLongDistanceException | TooHeightException e) {
-                    System.out.println(e.getMessage());
+        Obstacle[] obstacles = new Obstacle[4];
+        obstacles[0] = new Obstacle("Simple obstacle", new Distance(7000), new Wall(2));
+        obstacles[1] = new Obstacle("Long obstacle", new Distance(1000), new Wall(5));
+        obstacles[2] = new Obstacle("Hard obstacle", new Distance(5000), new Wall(4));
+        obstacles[3] = new Obstacle("Easy obstacle", new Distance(2000), new Wall(4));
+
+        showResult(team1, obstacles);
+        showResult(team2, obstacles);
+
+    }
+
+    private static void showResult(Team team, Obstacle[] obstacles) {
+        for (Obstacle o : obstacles) {
+            for (ICourse i : team.getTeam()) {
+                if (o.overcome(i)) {
+                    System.out.println(i.getClass().getSimpleName() + " " + i.info() + " из команды \'" + team.getName().toUpperCase() + "\' прошёл полосу препятствий \'" + o.getName() + "\'.");
+                } else {
+                    System.out.println(i.getClass().getSimpleName() + " \'" + i.info() + "\' из команды \'" + team.getName().toUpperCase() + "\' не прошёл полосу препятствий \'" + o.getName() + "\' и сошёл с дистанции.");
                 }
-                actions[i].showVictoryStatus(courses[j]);
-                System.out.println("-------------------------------------------------------------");
+                System.out.println("------------------------------------");
             }
         }
     }

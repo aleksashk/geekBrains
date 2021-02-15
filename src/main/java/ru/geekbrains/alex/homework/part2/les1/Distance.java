@@ -7,7 +7,12 @@ public class Distance {
         this.length = length;
     }
 
-    public int getLength() {
-        return length;
+    public boolean overcome(ICourse member) {
+        if (member.run() >= length) {
+            System.out.println(member.getClass().getSimpleName() + "\'" + member.info() + "\' пробежал дистанцию длиной " + length + "м.");
+            return true;
+        }
+        System.out.println(member.getClass().getSimpleName() + "\'" + member.info() + "\' не пробежал дистанцию длиной " + length + "м.");
+        return false;
     }
 }
