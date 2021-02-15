@@ -11,19 +11,11 @@ public class Obstacle {
         this.wall = wall;
     }
 
-    public Distance getDistance() {
-        return distance;
-    }
-
-    public Wall getWall() {
-        return wall;
-    }
-
     public String getName() {
         return name;
     }
 
-    public boolean overcome(ICourse member) {
-        return getWall().overcome(member) && getDistance().overcome(member);
+    public boolean overcome(IAction member) {
+        return wall.overcome(member) && distance.overcome(member);
     }
 }

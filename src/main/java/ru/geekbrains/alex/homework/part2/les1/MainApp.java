@@ -2,14 +2,14 @@ package ru.geekbrains.alex.homework.part2.les1;
 
 public class MainApp {
     public static void main(String[] args) {
-        ICourse[] members1 = {
+        IAction[] members1 = {
                 new Cat("Laska", 5, 10000),
                 new Person("Ivanka", 6, 50000),
                 new Robot("3PR-16", 8, 13000),
                 new Cat("John", 10, 7000)
         };
 
-        ICourse[] members2 = {
+        IAction[] members2 = {
                 new Cat("Bob", 1, 100),
                 new Person("Flora", 1, 500),
                 new Robot("745-UBSD-FR07", 2, 300),
@@ -25,21 +25,10 @@ public class MainApp {
         obstacles[2] = new Obstacle("Hard obstacle", new Distance(5000), new Wall(4));
         obstacles[3] = new Obstacle("Easy obstacle", new Distance(2000), new Wall(4));
 
-        showResult(team1, obstacles);
-        showResult(team2, obstacles);
+        Course c1 = new Course(obstacles);
 
-    }
+        c1.dolt(team1);
+        c1.dolt(team2);
 
-    private static void showResult(Team team, Obstacle[] obstacles) {
-        for (Obstacle o : obstacles) {
-            for (ICourse i : team.getTeam()) {
-                if (o.overcome(i)) {
-                    System.out.println(i.getClass().getSimpleName() + " " + i.info() + " из команды \'" + team.getName().toUpperCase() + "\' прошёл полосу препятствий \'" + o.getName() + "\'.");
-                } else {
-                    System.out.println(i.getClass().getSimpleName() + " \'" + i.info() + "\' из команды \'" + team.getName().toUpperCase() + "\' не прошёл полосу препятствий \'" + o.getName() + "\' и сошёл с дистанции.");
-                }
-                System.out.println("------------------------------------");
-            }
-        }
     }
 }

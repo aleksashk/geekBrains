@@ -1,6 +1,6 @@
 package ru.geekbrains.alex.homework.part2.les1;
 
-public class Person implements ICourse {
+public class Person implements IAction {
 
     private String name;
     private int maxJumpHeight;
@@ -18,13 +18,13 @@ public class Person implements ICourse {
 
     @Override
     public int run() {
-        System.out.println("person \'" + name + "\' is run.");
+        System.out.println("человек по имени \'" + name + "\' бежит.");
         return maxDistanceLength;
     }
 
     @Override
     public int jump() {
-        System.out.println("person \'" + name + "\' is jump.");
+        System.out.println("человек по имени \'" + name + "\' прыгает.");
         return maxJumpHeight;
     }
 }

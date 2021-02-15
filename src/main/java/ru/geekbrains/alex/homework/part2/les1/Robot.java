@@ -1,6 +1,6 @@
 package ru.geekbrains.alex.homework.part2.les1;
 
-public class Robot implements ICourse {
+public class Robot implements IAction {
 
     private String name;
     private int maxJumpHeight;
@@ -18,13 +18,13 @@ public class Robot implements ICourse {
 
     @Override
     public int run() {
-        System.out.println("robot \'" + name + "\' is run.");
+        System.out.println("робот с названием \'" + name + "\' бежит.");
         return maxDistanceLength;
     }
 
     @Override
     public int jump() {
-        System.out.println("robot \'" + name + "\' is jump.");
+        System.out.println("робот с названием \'" + name + "\' прыгает.");
         return maxJumpHeight;
     }
 }

@@ -1,6 +1,6 @@
 package ru.geekbrains.alex.homework.part2.les1;
 
-public interface ICourse {
+public interface IAction {
 
     int run();
 

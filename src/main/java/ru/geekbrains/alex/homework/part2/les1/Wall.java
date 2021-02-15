@@ -7,7 +7,7 @@ public class Wall {
         this.height = height;
     }
 
-    public boolean overcome(ICourse member) {
+    public boolean overcome(IAction member) {
 
         if (member.jump() >= height) {
             System.out.println(member.getClass().getSimpleName() + "\'" + member.info() + "\' перепрыгнул стену высотой " + height + "м.");

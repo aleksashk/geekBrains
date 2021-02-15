@@ -7,7 +7,7 @@ public class Distance {
         this.length = length;
     }
 
-    public boolean overcome(ICourse member) {
+    public boolean overcome(IAction member) {
         if (member.run() >= length) {
             System.out.println(member.getClass().getSimpleName() + "\'" + member.info() + "\' пробежал дистанцию длиной " + length + "м.");
             return true;

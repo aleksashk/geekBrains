@@ -1,6 +1,6 @@
 package ru.geekbrains.alex.homework.part2.les1;
 
-public class Cat implements ICourse {
+public class Cat implements IAction {
 
     private String name;
     private int maxJumpHeight;
@@ -14,13 +14,13 @@ public class Cat implements ICourse {
 
     @Override
     public int run() {
-        System.out.println("cat \'" + name + "\' is run.");
+        System.out.println("кот \'" + name + "\' бежит.");
         return maxDistanceLength;
     }
 
     @Override
     public int jump() {
-        System.out.println("cat \'" + name + "\' is jump.");
+        System.out.println("кот \'" + name + "\' прыгает.");
         return maxJumpHeight;
     }
 
