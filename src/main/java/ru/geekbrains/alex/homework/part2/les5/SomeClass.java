@@ -46,7 +46,7 @@ public class SomeClass {
 
         System.arraycopy(arrFirstPart, 0, arr, 0, HALF);
         System.arraycopy(arrSecondPart, 0, arr, HALF, HALF);
-        System.out.println("time for working of the fillArraySecondtMeth: " + (System.currentTimeMillis() - a));
+        System.out.println("time for working of the fillArraySecondMeth: " + (System.currentTimeMillis() - a));
 
     }
 }
